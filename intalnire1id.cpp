@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -24,7 +25,7 @@ public:
 		this->esteBiped = true;
 		//robot1.culoare = (char*)malloc(strlen("Alb")+1);
 		this->culoare = new char[strlen("Alb") + 1];
-		strcpy_s(this->culoare, strlen("Alb") + 1, "Alb");
+		strcpy(this->culoare, "Alb");
 	}
 
 	Robot(string nume) {
@@ -34,7 +35,7 @@ public:
 		this->esteBiped = true;
 		//robot1.culoare = (char*)malloc(strlen("Alb")+1);
 		this->culoare = new char[strlen("Alb") + 1];
-		strcpy_s(this->culoare, strlen("Alb") + 1, "Alb");
+		strcpy(this->culoare, "Alb");
 	}
 
 	Robot(int versiuneSoft) {
@@ -44,7 +45,7 @@ public:
 		this->esteBiped = true;
 		//robot1.culoare = (char*)malloc(strlen("Alb")+1);
 		this->culoare = new char[strlen("Alb") + 1];
-		strcpy_s(this->culoare, strlen("Alb") + 1, "Alb");
+		strcpy(this->culoare, "Alb");
 	}
 
 	Robot(string nume, int versiuneSoft, float memorie, bool esteBiped,const char* culoare) {
@@ -54,7 +55,7 @@ public:
 		this->esteBiped = esteBiped;
 		//robot1.culoare = (char*)malloc(strlen("Alb")+1);
 		this->culoare = new char[strlen(culoare) + 1];
-		strcpy_s(this->culoare, strlen(culoare) + 1, culoare);
+		strcpy(this->culoare, culoare);
 
 	}
 
