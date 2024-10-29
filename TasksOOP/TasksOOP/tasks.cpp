@@ -51,6 +51,7 @@ public:
 		else {
 			cout << "s-au croit " << nrPantaloni << " perechi de pantaloni." << endl;
 		}
+		cout << endl;
 	}
 
 	void afisare() {
@@ -107,13 +108,14 @@ public:
 		else {
 			cout << "s-au croit " << nrBluze << " bluze." << endl;
 		}
+		cout << endl;
 	}
 
 	void afisare() {
 		cout << "Marime: " << this->marime << endl;
 		cout << "Culoare: " << this->culoare << endl;
 		cout << "Material: " << this->tipManeca << endl;
-		cout << "Numar pantaloni: " << nrBluze << endl;
+		cout << "Numar bluze: " << nrBluze << endl;
 		cout << endl;
 	}
 
@@ -159,18 +161,19 @@ public:
 	static void afiseazaNrFuste() {
 		cout << "Pana acum ";
 		if (nrFuste == 1) {
-			cout << "s-a croit o fuste." << endl;
+			cout << "s-a croit o fusta." << endl;
 		}
 		else {
 			cout << "s-au croit " << nrFuste << " fuste." << endl;
 		}
+		cout << endl;
 	}
 
 	void afisare() {
 		cout << "Marime: " << this->marime << endl;
 		cout << "Culoare: " << this->culoare << endl;
 		cout << "Material: " << this->tipLungime << endl;
-		cout << "Numar pantaloni: " << nrFuste << endl;
+		cout << "Numar fuste: " << nrFuste << endl;
 		cout << endl;
 	}
 };
@@ -178,17 +181,42 @@ int Fusta::nrFuste = 0;
 
 int main() {
 	
-	Pantalon pant1;
-	pant1.afisare();
+	//Pantalon pant1;
+	//pant1.afisare();
 
-	Pantalon pant2(46, (char*)"Negru");
-	pant2.afisare();
+	//Pantalon pant2(46, (char*)"Negru");
+	//pant2.afisare();
 
-	Pantalon pant3(40, (char*)"Gri", "bumbac");
-	pant3.afisare();
+	//Pantalon pant3(40, (char*)"Gri", "bumbac");
+	//pant3.afisare();
 
-	Pantalon::afiseazaNrPantaloni();
+	//Pantalon::afiseazaNrPantaloni();
 
+	Bluza bluza1;
+	bluza1.afisare();
+
+	Bluza bluza2(36, (char*)"Maro");
+	bluza2.afisare();
+
+	Bluza bluza3(38, (char*)"Turcoz", "bufanta");
+	bluza3.afisare();
+
+	Bluza::afiseazaNrBluza();
+
+	Fusta fusta1;
+	fusta1.afisare();
+
+	Fusta::afiseazaNrFuste();
+
+	Fusta fusta2(44, (char*)"Mov", "Midi");
+	fusta2.afisare();
+
+	Fusta::afiseazaNrFuste();
+
+	Fusta fusta3(50, (char*)"Lila", "Lunga");
+	fusta3.afisare();
+
+	Fusta::afiseazaNrFuste();
 
 	return 0;
 }
