@@ -37,11 +37,26 @@ public:
 		nrPantaloni++;
 	}
 
+	Pantalon(const Pantalon& p) :marime(p.marime) {
+		this->culoare = new char[strlen(p.culoare)+1];
+		strcpy_s(this->culoare, strlen(p.culoare) + 1, p.culoare);
+		this->material = p.material;
+	}
+
 	~Pantalon() {
 		if (this->culoare != nullptr) {
 			delete[] this->culoare;
 		}
 	}
+
+	int getMarime() {
+		return this->marime;
+	}
+	char* getCuloare() {
+		return this->culoare;
+	}
+
+	//void setCuloare()
 
 	static void afiseazaNrPantaloni() {
 		cout << "Pana acum ";
@@ -94,11 +109,19 @@ public:
 		nrBluze++;
 	}
 
+	Bluza(const Bluza& b) :marime(b.marime) {
+		this->culoare = new char[strlen(b.culoare) + 1];
+		strcpy_s(this->culoare, strlen(b.culoare) + 1, b.culoare);
+		this->tipManeca = b.tipManeca;
+	}
+
 	~Bluza() {
 		if (this->culoare != nullptr) {
 			delete[]this->culoare;
 		}
 	}
+
+
 
 	static void afiseazaNrBluza() {
 		cout << "Pana acum ";
@@ -152,6 +175,12 @@ public:
 		nrFuste++;
 	}
 
+	Fusta(const Fusta& f) :marime(f.marime) {
+		this->culoare = new char[strlen(f.culoare) + 1];
+		strcpy_s(this->culoare, strlen(f.culoare) + 1, f.culoare);
+		this->tipLungime = f.tipLungime;
+	}
+
 	~Fusta() {
 		if (this->culoare != nullptr) {
 			delete[]this->culoare;
@@ -179,6 +208,7 @@ public:
 };
 int Fusta::nrFuste = 0;
 
+
 int main() {
 	
 	//Pantalon pant1;
@@ -192,7 +222,7 @@ int main() {
 
 	//Pantalon::afiseazaNrPantaloni();
 
-	Bluza bluza1;
+	/*Bluza bluza1;
 	bluza1.afisare();
 
 	Bluza bluza2(36, (char*)"Maro");
@@ -216,7 +246,9 @@ int main() {
 	Fusta fusta3(50, (char*)"Lila", "Lunga");
 	fusta3.afisare();
 
-	Fusta::afiseazaNrFuste();
+	Fusta::afiseazaNrFuste();*/
+
+	
 
 	return 0;
 }
