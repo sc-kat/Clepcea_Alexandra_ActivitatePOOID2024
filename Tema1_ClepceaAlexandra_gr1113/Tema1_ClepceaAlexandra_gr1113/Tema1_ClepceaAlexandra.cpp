@@ -24,7 +24,7 @@ public:
 			this->nrPersoaneImbarcate = nrPersoaneImbarcate;
 		}
 		else {
-			this->nrPersoaneImbarcate = NULL;
+			this->nrPersoaneImbarcate = 0;
 		}
 		this->producator = new char[strlen(producator) + 1];
 		strcpy_s(this->producator, strlen(producator) + 1, producator);
@@ -50,16 +50,18 @@ public:
 		}
 		this->producator = new char[strlen(a.producator) + 1];
 		strcpy_s(this->producator, strlen(a.producator) + 1, a.producator);
-	}
 
-	bool operator>(const Autobuz& a) {
-		return this->capacitate > a.capacitate;
+		return *this;
 	}
 
 	friend ostream& operator<<(ostream& oStream, const Autobuz& autobuz);
 
-	operator int() {
+	operator int() const {
 		return this->nrPersoaneImbarcate;
+	}
+
+	bool operator>(const Autobuz& a) const {
+		return this->capacitate > a.capacitate;
 	}
 
 	int getCapacitate() {
@@ -78,7 +80,7 @@ public:
 		this->nrPersoaneImbarcate = nrPersImb;
 	}
 
-	void afisare() {
+	void afisare() {   //metoda extra, creata pentru a ma verifica, inainte de a supraincarca operatorul <<;
 		cout << "Id autobuz: " << this->idAutobuz << endl;
 		cout << "Capacitate: " << this->capacitate << endl;
 		cout << "Nr persoane imbarcate: " << this->nrPersoaneImbarcate << endl;
