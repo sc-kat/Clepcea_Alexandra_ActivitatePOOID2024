@@ -80,7 +80,7 @@ public:
 		this->nrPersoaneImbarcate = nrPersImb;
 	}
 
-	void afisare() {   //metoda extra, creata pentru a ma verifica, inainte de a supraincarca operatorul <<;
+	void afisare() {   //metoda extra pentru a ma verifica, creata inainte de a supraincarca operatorul <<;
 		cout << "Id autobuz: " << this->idAutobuz << endl;
 		cout << "Capacitate: " << this->capacitate << endl;
 		cout << "Nr persoane imbarcate: " << this->nrPersoaneImbarcate << endl;
