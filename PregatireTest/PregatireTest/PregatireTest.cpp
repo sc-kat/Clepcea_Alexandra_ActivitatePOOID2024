@@ -133,22 +133,18 @@ ostream& operator<<(ostream& oStream, const Farmacie& f) {
 
 istream& operator>>(istream& in, Farmacie& f) {
 	cout << "Adresa: ";
-	in >> ws;
-	getline(in, f.adresa);
+	in >> f.adresa;
 	cout << "Nr Medicamente: ";
 	in >> f.nrMedicamente;
 	if (f.preturi != NULL) {
 		delete[] f.preturi;
 	}
 	if (f.nrMedicamente > 0) {
-		cout << "Preturi: ";
+		f.preturi = new float[f.nrMedicamente];
 		for (int i = 0; i < f.nrMedicamente; i++) {
+			cout << "Pretul " << i+1 << ": ";
 			in >> f.preturi[i];
-			if (i < f.nrMedicamente - 1) {
-				cout << ", ";
-			}
 		}
-		cout << ".";
 	}
 	else {
 		f.preturi = NULL;
@@ -163,11 +159,11 @@ int main(){
 	cout << farmacie;
 
 	float preturi[] = {3.55, 2.00, 1.00, 6.99};
-	Farmacie farmacie2("Bucuresti 2", 4, preturi);
+	Farmacie farmacie2("Bucuresti", 4, preturi);
 	cout << farmacie2;
 	
 	cout << farmacie.getAdresa() << endl;
-	farmacie.setAdresa("Blvd. Basarabiei");
+	farmacie.setAdresa("Braila");
 	cout << farmacie;
 	cout << farmacie2.getNrMedicamenteIeftine(5) << endl;
 
@@ -182,7 +178,7 @@ int main(){
 
 	cout << endl;
 
-	//cin >> farmacie;
+	cin >> farmacie;
 	cout << farmacie;
 }
 
